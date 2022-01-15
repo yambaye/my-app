@@ -1,0 +1,23 @@
+.header{
+    width: 100%;
+    background-color: rgb(48, 133, 148);
+    height: 100px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* .successTag{
+    position: absolute;
+    background-color: white;
+    right: 10px;
+    bottom: 10px;
+    border-radius: 5px;
+    padding: 30px;
+}
+
+.successText{
+    color: black;
+} */
