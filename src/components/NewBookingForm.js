@@ -54,7 +54,7 @@ function NewBookingForm(props) {
                 <button 
                     className={classes.submitButton} 
                     disabled={(enteredName === '') || (isNaN(bookingsCtx.selectedTime))}>
-                    Make an Appoitment
+                    Make an Appointment
                 </button>
             </form>
     )

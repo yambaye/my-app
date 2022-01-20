@@ -1,5 +1,4 @@
 import DoctorItem from './DoctorItem';
-import classes from './DoctorList.module.css';
 
 function DoctorList(props){
     return(
