@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import AllDoctorsPage from './pages/AllDoctors';
 import Layout from './components/Layout/Layout';
 import Success from './pages/Success';
-import OpeningHoursList from '../components/OpeningHoursList';
+import OpeningHoursList from './components/OpeningHoursList';
 
 function App() {
   return (
