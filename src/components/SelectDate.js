@@ -5,6 +5,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import BookingsContext from '../store/booking-context';
 import NewBookingForm from './NewBookingForm';
 import TimePicker from './TimePicker';
+import classes from './SelectDate.module.css';
 
 function SelectDate(props){
 
@@ -19,19 +20,21 @@ function SelectDate(props){
 
     function reloadTime(date){
         setStartDate(date);
-        bookingsCtx.updateSelectedTime(0);
+        bookingsCtx.updateSelectedTime(NaN);
     };
 
     return(
         <div>
-            <div>
-                <DatePicker
+            <p className={classes.date}>Date</p>
+            <div className={classes.datePicker}>
+                <DatePicker wrapperClassName='date-picker'
                     selected={startDate}
                     onChange={reloadTime}
                     minDate={new Date()}
                     dateFormat="dd-MM-yyyy"
             /></div>
             <div>
+                <p className={classes.timeTitle}>Time</p>
                 <TimePicker 
                     selectedDate={startDate} 
                     doctorId={props.doctorId}

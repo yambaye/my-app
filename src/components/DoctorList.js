@@ -7,10 +7,7 @@ function DoctorList(props){
             {props.doctors.map((doctor) => (
                 <DoctorItem 
                     key={doctor.id}
-                    name={doctor.name}
-                    address={doctor.address}
-                    link={doctor.id}
-                    img={doctor.img}
+                    doctor={doctor}
                 />
             ))
             }

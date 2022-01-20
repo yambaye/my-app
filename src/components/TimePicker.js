@@ -1,14 +1,15 @@
 import { useContext } from 'react';
 
 import BookingsContext from '../store/booking-context';
+import classes from './TimePicker.module.css';
 
 function TimePicker(props){
+
     const bookingsCtx = useContext(BookingsContext);
     const doctorBookingList = bookingsCtx.doctorBookings(props.doctorId);
     const bookingTimeArr = bookingsCtx.bookedTime(doctorBookingList);
     const bookingDateArr = bookingsCtx.bookedDate(doctorBookingList);
     const bookingDateAndTimeArr = bookingsCtx.bookedDateAndTime(bookingDateArr,bookingTimeArr);
-    
     let modifiedButtonList;
 
     //Obtain the data of today, which is used in filterPastTime function
@@ -97,21 +98,21 @@ function TimePicker(props){
         
         if (filterBookedTime(timeNumber)){
             return(
-                <button key={timeNumber} value={timeNumber} disabled>
+                <button className={classes.timeButton} key={timeNumber} value={timeNumber} disabled>
                     {text}
                 </button>
             )
         }
         if (filterPastTime(timeNumber)){
             return(
-                <button key={timeNumber} value={timeNumber} disabled>
+                <button className={classes.timeButton} key={timeNumber} value={timeNumber} disabled>
                     {text}
                 </button>
             )
         }
         else{
             return(
-                <button key={timeNumber} value={timeNumber} onClick={sumbitTimeHandler}>
+                <button className={`${classes.timeButton} ${(bookingsCtx.selectedTime===timeNumber)? classes.clicked:''}`} key={timeNumber} value={timeNumber} onClick={sumbitTimeHandler}>
                     {text}
                 </button>
             )
@@ -119,15 +120,14 @@ function TimePicker(props){
     };
 
     function sumbitTimeHandler(event){
-        
         event.preventDefault();
-        bookingsCtx.updateSelectedTime(event.target.value);
+        
+        bookingsCtx.updateSelectedTime(parseFloat(event.target.value));
     };
 
     return(
-        <div>
+        <div className={classes.timeSlots}>
             {createTimeSlotList(modifiedButtonList)}
-            {bookingsCtx.selectedTime}
         </div>
     )
 };

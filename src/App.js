@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import AllDoctorsPage from './pages/AllDoctors';
 import Layout from './components/Layout/Layout';
 import AddRoutes from './components/AddRoutes';
+import Success from './pages/Success';
 
 function App() {
   return (
@@ -12,10 +13,10 @@ function App() {
           <AllDoctorsPage />
         </Route>
         <Route path='/success'>
-          {/* <Success /> */}
+          <Success />
         </Route>
-      </Switch>
         <AddRoutes />
+      </Switch>
     </Layout>
   );
 }
