@@ -1,0 +1,26 @@
+.timeSlots{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(100px,1fr));
+    gap: 8px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 25px;
+}
+
+.timeButton{
+    cursor: pointer;
+    padding: 12px 8px;
+    border-radius: 10px;
+    border: 1px solid lightgray;
+    background-color: white;
+}
+
+.clicked{
+    border: 1px solid rgb(59, 155, 142);
+    background-color: rgb(187, 222, 228)
+}
+
+.timeButton:disabled{
+    background-color: lightgray;
+    cursor: not-allowed;
+}

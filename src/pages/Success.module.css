@@ -1,0 +1,66 @@
+.container{
+    display: grid;
+    margin-top: 40px;
+    grid-template-columns: 300px;
+    justify-content: center;
+    padding-bottom: 400px;
+}
+
+.window{
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.upper{
+    display: grid;
+    background-color: rgb(48, 133, 148);
+    grid-template-columns: 300px;
+    grid-template-rows: 70px 70px;
+}
+
+.lower{
+    background-color: white;
+    display: grid;
+    grid-template-columns: 250px;
+    justify-content: center;
+    grid-template-rows: 70px 45px;
+    padding-bottom: 30px;
+}
+
+.check{
+    font-size: 50px;
+    color: white;
+    text-align: center;
+    align-self: end;
+}
+
+.success{
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    align-self: center;
+}
+
+.lower p{
+    color: gray;
+    font-size: 14px;
+    text-align: center;
+    align-self: center;
+}
+
+.lower button{
+    background-color: rgb(48, 133, 148);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    width: 160px;
+    justify-self: center;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.lower button:hover{
+    background-color: white;
+    color: rgb(48, 133, 148);
+    border: 1px solid rgb(48, 133, 148);
+}

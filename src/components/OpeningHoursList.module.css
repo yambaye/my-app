@@ -1,0 +1,63 @@
+.bookingPage{
+    position: relative;
+    padding-bottom: 40px;
+}
+
+.name{
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+    background-color: gray;
+    color: white;
+}
+
+.address{
+    margin-top: 20px;
+    margin-left: 15px;
+    margin-bottom: 25px;
+}
+
+.addressTitle{
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.addressDetails{
+    font-size: 17px;
+}
+
+.hours{
+    margin-left: 15px;
+    margin-bottom: 25px;
+}
+
+.hoursTitle{
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.openingHours{
+    white-space: pre-wrap;
+    font-size: 17px;
+}
+
+.backButton{
+    cursor: pointer;
+    position: absolute;
+    top: -90px;
+    left: 20px;
+    background-color: #555555;
+    text-align: center;
+    color: white;
+    padding: 2px 10px;
+    font-size: 11px;
+    border-radius: 12px;
+    border: none;
+}
+
+.backButton:hover{
+    background-color: white;
+    color: #555555;
+}
