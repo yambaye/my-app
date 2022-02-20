@@ -2,6 +2,7 @@ import { useHistory } from 'react-router-dom';
 
 import classes from './Success.module.css';
 
+// The display of booking success page
 function Success(){
 
     const history = useHistory();
