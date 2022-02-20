@@ -15,6 +15,7 @@ function NewBookingForm(props) {
     const [enteredName, setEnteredName] = useState('');
     
     // Store the input of user's name
+
     function nameChange(){
         setEnteredName(nameInputRef.current.value); 
     }
