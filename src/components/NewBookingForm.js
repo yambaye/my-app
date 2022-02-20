@@ -11,12 +11,15 @@ function NewBookingForm(props) {
 
     const bookingsCtx = useContext(BookingsContext);
 
+    // User's name is stored here
     const [enteredName, setEnteredName] = useState('');
     
+    // Store the input of user's name
     function nameChange(){
         setEnteredName(nameInputRef.current.value); 
     }
 
+    // Submit the booking to the API
     function submitHandler(event) {
         event.preventDefault();
     
@@ -40,6 +43,8 @@ function NewBookingForm(props) {
             ).then(() => {history.replace('/success');
                 });
     };
+
+    // Users fill in their names and click submit after they pick the date and time
     return (
             <form className={classes.form} onSubmit={submitHandler}>
                 <div>

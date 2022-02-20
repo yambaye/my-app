@@ -11,6 +11,7 @@ function SelectDate(props){
 
     const [startDate, setStartDate] = useState(new Date());
     
+    // Store the selected date in a string format
     const monthSelected = (startDate.getMonth() + 1 ).toString().padStart(2, '0');
     const dateSelected = startDate.getDate().toString().padStart(2, '0');
     const yearSelected = startDate.getFullYear()
@@ -18,11 +19,15 @@ function SelectDate(props){
 
     const bookingsCtx = useContext(BookingsContext);
 
+    // When selecting a new date, the time, stored in context, resets to NaN
     function reloadTime(date){
         setStartDate(date);
         bookingsCtx.updateSelectedTime(NaN);
     };
 
+    // DatePicker: a component used for displaying the dates using a calendar dialog
+    // TimePicker: Pass the date information to the component for selecting time
+    // NewBookingForm: Pass information to the component for submission of booking
     return(
         <div>
             <p className={classes.date}>Date</p>

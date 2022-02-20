@@ -7,13 +7,16 @@ import SelectDate from '../components/SelectDate';
 import classes from './OpeningHoursList.module.css';
 
 function OpeningHoursList(){
+    // Get the doctor id from the URL
     let { id } = useParams();
 
     const history = useHistory();
 
+    // Get the list of all the doctors from context
     const bookingsCtx = useContext(BookingsContext);
     const doctorList = bookingsCtx.storedDoctors;
 
+    // A nested array storing the opening hours from Monday to Sunday
     const openingHoursNestedArr = [[],[],[],[],[],[],[]];
 
     const openingHoursStringArr = [];
@@ -21,6 +24,7 @@ function OpeningHoursList(){
 
     let doctorObject = {};
 
+    // Extract the openings hours of a doctor with the specific id
     for (let x in doctorList){
         if(doctorList[x].id === id){
             doctorObject = doctorList[x];
@@ -31,13 +35,11 @@ function OpeningHoursList(){
             
         }
     }
-
+    // Extract the other detailed info of the doctor
     const {name, address} = doctorObject;
     const {district, line_1, line_2} = address;
 
-    openingHoursStringArr.push(Sun,Mon,Tue,Wed,Thu,Fri,Sat)
-
-    //Obtain the opening hours of a doctor and create displaying opening hours
+    // Convert the opening hours of a doctor to a text form
     function createHourList(hourObject){
         const {day, start, end} = hourObject;
         
@@ -78,6 +80,11 @@ function OpeningHoursList(){
         }
     }
 
+    // The opening hours from Monday to Sunday in text form is stored in this array
+    openingHoursStringArr.push(Sun,Mon,Tue,Wed,Thu,Fri,Sat)
+
+    // Create an array of hours, at 1-hour intervals, from starting time to ending time,
+    // and store them in the nested array
     function createHoursOfDay(start, end, array){
         let loopNumber = parseFloat(start);
         while (loopNumber <= (parseFloat(end) - 1)){
@@ -86,6 +93,7 @@ function OpeningHoursList(){
         }
     }
 
+    // Convert the string of number to time format
     function stringToTime(string){
         const timeNumber = parseFloat(string);
         const hourNumber = Math.floor(timeNumber);
@@ -94,6 +102,7 @@ function OpeningHoursList(){
         return `${hourNumber}:${minuteInString}`;
     }
 
+    // Display the info about the doctor
     function displayDoctorInfo(){
         return(
             <div>
@@ -127,6 +136,7 @@ function OpeningHoursList(){
         )
     }
 
+    // Pass the nested array to datepicker
     return (
         <section className={classes.bookingPage}>
             <div>

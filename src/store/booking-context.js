@@ -19,7 +19,8 @@ export function BookingsContextProvider(props){
     const [loadedDoctors, setLoadedDoctors] = useState([]);
 
     const [userSelectedTime, setUserSelectedTime] = useState(NaN);
-       
+    
+    // Obtain booking and doctor data from API
     useEffect(() => {
         setIsLoading(true);
         async function bookingData(){
@@ -52,22 +53,26 @@ export function BookingsContextProvider(props){
         )
     };
 
+    // Return a booking array that belongs to a specified doctor
     function doctorBookingsHandler(doctorID){
         return loadedBookings.filter(booking => booking.doctorId === doctorID);
     }
 
+    // Return the specific time of all bookings that belong to a specified doctor
     function bookedTimeHandler(bookings){
         const bookedTimeArr = [];
         bookings.forEach(booking => {bookedTimeArr.push(booking.start)});
         return bookedTimeArr;
     }
 
+    // Return the specific date of all bookings that belong to a specified doctor
     function bookedDateHandler(bookings){
         const bookedDateArr = [];
         bookings.forEach(booking => {bookedDateArr.push(booking.date)});
         return bookedDateArr;
     }
     
+    // Return the date and time of bookings that belong to a specified doctor, in Date format
     function bookedDateAndTimeHandler(bookedDates, bookedTimes){
         const dateAndTimeArr = [];
         for (let i = 0; i < bookedDates.length; i++){
@@ -79,6 +84,8 @@ export function BookingsContextProvider(props){
         }
         return dateAndTimeArr;
     }
+
+    // Updates the time when changing date
     function updateSelectedTimeHandler(time){
         setUserSelectedTime((preUserSelectedTime) => {
             return time;

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import classes from './DoctorItem.module.css';
 
+// Component for each doctor
 function DoctorItem(props){
     const {id, address, name, img} = props.doctor;
     const {district, line_1, line_2} = address;
