@@ -7,6 +7,12 @@ function Success(){
 
     const history = useHistory();
     
+    // Back to main page and refresh
+    function goBackAndRefresh(){
+        history.replace('/');
+        history.go(0);
+    }
+
     return(
         <section className={classes.container}>
             <div className={classes.window}>
@@ -18,7 +24,7 @@ function Success(){
                     <p>
                         You successfully scheduled an appointment.
                     </p>
-                    <button onClick={() => history.replace('/')}>
+                    <button onClick={() => goBackAndRefresh()}>
                         Done
                     </button>
                 </div>

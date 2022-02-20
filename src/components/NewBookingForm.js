@@ -29,7 +29,6 @@ function NewBookingForm(props) {
             'doctorId': props.doctorId,
             'date': props.date,
         }
-        
         fetch(
             'https://fe-assignment-api.herokuapp.com/booking',
             {

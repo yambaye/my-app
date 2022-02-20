@@ -106,7 +106,7 @@ function OpeningHoursList(){
     function displayDoctorInfo(){
         return(
             <div>
-                <button className={classes.backButton} onClick={() => history.replace('/')}>
+                <button className={classes.backButton} onClick={() => { history.replace('/'); history.go(0);}}>
                     Go Back
                 </button>
                 <p className={classes.name}>
